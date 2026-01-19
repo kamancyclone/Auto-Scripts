@@ -1,4 +1,4 @@
-name: LunesHost Auto Login
+name: Luneshost Auto Login
 
 on:
   # 每周五 UTC 12:00 运行（北京时间 20:00）
