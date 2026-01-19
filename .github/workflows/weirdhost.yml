@@ -1,4 +1,4 @@
-name: WeirdHost Auto Renew
+name: Weirdhost Auto Renew
 
 on:
   schedule:
