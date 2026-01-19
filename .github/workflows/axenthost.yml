@@ -2,7 +2,7 @@ name: Axenthost Auto Claim
 
 on:
   schedule:
-    # 每半时运行一次
+    # 每半小时运行一次
     - cron: '*/30 * * * *'
   workflow_dispatch:  # 支持手动触发
 
@@ -25,13 +25,12 @@ jobs:
       
       - name: Install dependencies
         working-directory: scripts
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: pip install -r requirements.txt -q > /dev/null 2>&1
       
       - name: Run claim script
         working-directory: scripts
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AXENTHOST_MAIL: ${{ secrets.AXENTHOST_MAIL }}
           AXENTHOST_PASS: ${{ secrets.AXENTHOST_PASS }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
