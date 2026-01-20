@@ -15,7 +15,7 @@ jobs:
       - name: Checkout private repo
         uses: actions/checkout@v4
         with:
-          repository: kamancyclone/Luneshost-Auto-Login
+          repository: ${{ github.repository_owner }}/Luneshost-Auto-Login
           token: ${{ secrets.PRIVATE_REPO_TOKEN }}
           path: scripts
 
