@@ -1,4 +1,4 @@
-name: Axenthost Auto Claim
+name: Axenthost-US Auto Claim
 
 on:
   schedule:
