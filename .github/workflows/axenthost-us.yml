@@ -14,7 +14,7 @@ jobs:
       - name: Checkout private repo
         uses: actions/checkout@v4
         with:
-          repository: ${{ github.repository_owner }}/Axenthost-Auto-Claim
+          repository: ${{ github.repository_owner }}/Axenthost-US-Auto-Claim
           token: ${{ secrets.PRIVATE_REPO_TOKEN }}
           path: scripts
       
