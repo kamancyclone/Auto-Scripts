@@ -56,6 +56,16 @@ jobs:
           USE_GOST_PROXY: ${{ secrets.OPTIKLINK_SOCKS_PROXY != '' && 'true' || 'false' }}
         run: python main.py
 
+      - name: Upload updated session to private repo
+        if: success()
+        working-directory: scripts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add OPTIKLINK_DISCORD_SESSION.json
+          git diff --staged --quiet || git commit -m "chore: update Discord session [skip ci]"
+          git push || echo "No changes to push"
+
       - name: Upload screenshots
         if: always()
         uses: actions/upload-artifact@v4
